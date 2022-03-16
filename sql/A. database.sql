@@ -12,11 +12,11 @@ CREATE TABLE ENDERECO (
 CREATE TABLE CLIENTE (
 	ClienteId varchar(14) PRIMARY KEY,
 	Nome varchar(40) not null,
-	Cnh varchar(11),
+	Cnh varchar(11), -- Cnh como PRIMARY KEY?
 	DataNasc date,
 	DataCadastro timestamp,
 	Email varchar(40),
-	Ativo boolean,
+	Ativo boolean default 1,
 	EnderecoId smallint,
 	FOREIGN KEY (EnderecoId) REFERENCES ENDERECO(EnderecoId)
 );
