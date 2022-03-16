@@ -10,18 +10,21 @@ CREATE TABLE ENDERECO (
 	Endereco varchar(40)
 );
 CREATE TABLE CLIENTE (
-	ClienteId varchar(14) PRIMARY KEY,
+	ClienteId varchar(14) not null PRIMARY KEY, -- Cpf
+	Rg varchar(12),
 	Nome varchar(40) not null,
-	Cnh varchar(11), -- Cnh como PRIMARY KEY?
+	-- Cnh varchar(11) not null unique, -- Cnh como PRIMARY KEY?
 	DataNasc date,
-	DataCadastro timestamp,
+	Sexo char(1),
 	Email varchar(40),
-	Ativo boolean default 1,
 	EnderecoId smallint,
+	DataCadastro timestamp,
+	Senha varchar(40),
+	Ativo boolean default 1,
 	FOREIGN KEY (EnderecoId) REFERENCES ENDERECO(EnderecoId)
 );
 CREATE TABLE CATEGORIA (
-	CategoriaId tinyint auto_increment PRIMARY KEY,
+	CategoriaId varchar(3) PRIMARY KEY, -- convenção de letras (A, B, SX)
 	Categoria varchar(20) not null,
 	Lugares tinyint,
 	MalaPequena tinyint,
@@ -38,7 +41,7 @@ CREATE TABLE MODELO (
 	Ano year,
 	PrecoAluguel float,
 	PrecoModelo float,
-	CategoriaId tinyint,
+	CategoriaId varchar(3),
 	UltimoUpdate timestamp,
 	Foto blob,
 	FOREIGN KEY (CategoriaId) REFERENCES CATEGORIA(CategoriaId)
@@ -48,6 +51,11 @@ CREATE TABLE LOCADORA (
 	Locadora varchar(30) not null,
 	EnderecoId smallint,
 	FOREIGN KEY (EnderecoId) REFERENCES ENDERECO(EnderecoId)
+);
+CREATE TABLE STATUS (
+	StatusId tinyint not null PRIMARY KEY,
+	Status enum('Disponível', 'Alugado', 'Reservado', 'Manutenção') unique,
+	UltimoUpdate timestamp
 );
 CREATE TABLE GARAGEM (
 	GaragemId smallint auto_increment PRIMARY KEY,
@@ -71,13 +79,6 @@ CREATE TABLE LOCACAO (
 	FOREIGN KEY (ClienteId) REFERENCES CLIENTE(ClienteId),
 	FOREIGN KEY (GaragemId) REFERENCES GARAGEM(GaragemId)
 );
-CREATE TABLE STATUS (
-	StatusId tinyint not null PRIMARY KEY,
-	Status enum('Disponível', 'Alugado', 'Reservado', 'Manutenção') unique,
-	-- DataInicio date,
-	-- DataFim date,
-	UltimoUpdate timestamp,
-);
 CREATE TABLE PAGAMENTO (
 	PagamentoId int auto_increment PRIMARY KEY,
 	ClienteId varchar(14),
@@ -86,3 +87,5 @@ CREATE TABLE PAGAMENTO (
 	FOREIGN KEY (ClienteId) REFERENCES CLIENTE(ClienteId),
 	FOREIGN KEY (LocacaoId) REFERENCES LOCACAO(LocacaoId)
 );
+
+drop schema dopler;
