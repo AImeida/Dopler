@@ -6,7 +6,7 @@ CREATE TABLE ENDERECO (
 	Uf char(2),
 	Cep varchar(9) unique,
 	Cidade varchar(30),
-	Bairro varchar(50),
+	Bairro varchar(60),
 	Endereco varchar(40)
 );
 CREATE TABLE CLIENTE (
@@ -17,7 +17,7 @@ CREATE TABLE CLIENTE (
 	DataNasc date,
 	Sexo char(1),
 	Telefone varchar(20)
-	Email varchar(40),
+	Email varchar(60),
 	EnderecoId smallint,
 	DataCadastro timestamp,
 	Senha varchar(40),
