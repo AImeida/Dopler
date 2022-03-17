@@ -6,7 +6,7 @@ CREATE TABLE ENDERECO (
 	Uf char(2),
 	Cep varchar(9) unique,
 	Cidade varchar(30),
-	Bairro varchar(40),
+	Bairro varchar(50),
 	Endereco varchar(40)
 );
 CREATE TABLE CLIENTE (
@@ -16,6 +16,7 @@ CREATE TABLE CLIENTE (
 	-- Cnh varchar(11) not null unique, -- Cnh como PRIMARY KEY?
 	DataNasc date,
 	Sexo char(1),
+	Telefone varchar(20)
 	Email varchar(40),
 	EnderecoId smallint,
 	DataCadastro timestamp,
@@ -26,11 +27,13 @@ CREATE TABLE CLIENTE (
 CREATE TABLE CATEGORIA (
 	CategoriaId varchar(3) PRIMARY KEY, -- convenção de letras (A, B, SX)
 	Categoria varchar(20) not null,
-	Lugares tinyint,
+	Lugares enum('2', '5', '7', '7+'),
 	MalaPequena tinyint,
 	MalaGrande tinyint,
-	Carga smallint,
-	TipoDirecao varchar(20)
+	Carga boolean,
+	TipoDirecao enum('Hidráulica', 'Elétrica'),
+	CambioAT boolean,
+	Extra set('Motor 1.6', 'Diesel', 'Banco de Couro', 'Tração 4x4', 'Blindado')
 );
 CREATE TABLE MODELO (
 	ModeloId smallint auto_increment PRIMARY KEY,
