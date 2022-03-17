@@ -57,8 +57,7 @@ CREATE TABLE LOCADORA (
 );
 CREATE TABLE STATUS (
 	StatusId tinyint not null PRIMARY KEY,
-	Status enum('Disponível', 'Alugado', 'Reservado', 'Manutenção') unique,
-	UltimoUpdate timestamp
+	Status enum('Disponível', 'Alugado', 'Reservado', 'Manutenção') unique
 );
 CREATE TABLE GARAGEM (
 	GaragemId smallint auto_increment PRIMARY KEY,
