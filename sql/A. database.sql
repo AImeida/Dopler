@@ -31,16 +31,16 @@ CREATE TABLE CATEGORIA (
 	MalaPequena tinyint,
 	MalaGrande tinyint,
 	Carga boolean,
-	TipoDirecao enum('Hidráulica', 'Elétrica'),
+	TipoDirecao enum('', 'Hidráulica', 'Elétrica'),
 	CambioAT boolean,
 	Extra set('Motor 1.6', 'Diesel', 'Banco de Couro', 'Tração 4x4', 'Blindado')
 );
 CREATE TABLE MODELO (
 	ModeloId smallint auto_increment PRIMARY KEY,
-	Modelo varchar(30) not null,
+	Modelo varchar(40) not null,
 	Fabricante varchar(30) not null,
-	Direcao varchar(20),
-	Cambio varchar(20),
+	Direcao enum('', 'Hidráulica', 'Elétrica'),
+	Cambio enum('Manual', 'Automático'),
 	Ano year,
 	PrecoAluguel float,
 	PrecoModelo float,
