@@ -1,121 +1,3 @@
---##### DADOS PARA TESTE #####--
-
-INSERT INTO ENDERECO(EnderecoId, Uf, Cep, Cidade, Bairro, Endereco) VALUES (1, 'DF', '70688-290', 'Brasília', 'Setor Noroeste', 'Quadra CRNW 511 Bloco A');
-INSERT INTO ENDERECO(EnderecoId, Uf, Cep, Cidade, Bairro, Endereco) VALUES (2, 'DF', '71742-002', 'Brasília', 'Asa Norte', 'Quadra EQN 412/413');
--- INSERT INTO ENDERECO(EnderecoId, Uf, Cep, Cidade, Bairro, Endereco) VALUES (3, 'DF', '72548-241', 'Brasília', 'Santa Maria', 'Quadra CL 418 Bloco A');
--- INSERT INTO ENDERECO(EnderecoId, Uf, Cep, Cidade, Bairro, Endereco) VALUES (4, 'DF', '71805-719', 'Brasília', 'Riacho Fundo I', 'Quadra QN 7 Conjunto 19');
--- INSERT INTO ENDERECO(EnderecoId, Uf, Cep, Cidade, Bairro, Endereco) VALUES (5, 'DF', '71994-145', 'Brasília', 'Setor Habitacional Arniqueira', 'Conjunto SHA Conjunto 4 Chácara 23');
--- INSERT INTO ENDERECO(EnderecoId, Uf, Cep, Cidade, Bairro, Endereco) VALUES (6, 'DF', '71880-035', 'Brasília', 'Riacho Fundo II', 'Quadra QN 7C Conjunto 5');
--- INSERT INTO ENDERECO(EnderecoId, Uf, Cep, Cidade, Bairro, Endereco) VALUES (7, 'DF', '71901-210', 'Brasília', 'Norte (Águas Claras)', 'Alameda Gravatá Quadra 301 Conjunto 02');
--- INSERT INTO ENDERECO(EnderecoId, Uf, Cep, Cidade, Bairro, Endereco) VALUES (8, 'DF', '72210-070', 'Brasília', 'Ceilândia Norte (Ceilândia)', 'Quadra QNM 6 Conjunto J');
--- INSERT INTO ENDERECO(EnderecoId, Uf, Cep, Cidade, Bairro, Endereco) VALUES (9, 'DF', '70002-901', 'Brasília', 'Asa Norte', 'SBN Quadra 1 Bloco A 19º Andar');
------------
-
------------
-INSERT INTO CATEGORIA(CategoriaId, Categoria, Lugares, MalaPequena, MalaGrande, Carga, TipoDirecao, CambioAT, Extra) VALUES
-	-- A Comum
-	('A0', 'Compacto', '5', 1, 1, null, null, 0, ''),
-	('AS', 'Econômico', '5', 1, 2, null, 'Hidráulica', 0, ''),
-	('ASx', 'Econômico Sedan', '5', 2, 2, null, 'Hidráulica', 0, ''),
-	('AX', 'Intermediário', '5', 2, 2, null, 'Hidráulica', 0, 'Motor 1.6'),
-	('AXt', 'Intermediário AT', '5', 2, 2, null, 'Hidráulica', 1, 'Motor 1.6'),
-	-- B Adaptado
-	('B', 'Adaptado', '5', 2, 5, null, 'Hidráulica', 1, ''),
-	-- G Grande
-	('G0', 'Furgão Feio', '2', 0, 0, '700kg', null, 0, ''),
-	('GS', 'Furgão Especial', '2', 0, 0, '1000kg', 'Hidráulica', 0, 'Diesel'),
-	('GX', 'Minivan', '7', 2, 2, null, 'Hidráulica', 0, ''),
-	('GXs', 'Van', '7+', 0, 0, null, 'Hidráulica', 0, 'Diesel'),
-	-- E Executivo
-	('E', 'Executivo', '5', 2, 3, null, 'Hidráulica', 1, ''),
-	('EB', 'Executivo Blindado', '5', 2, 3, null, 'Hidráulica', 1, 'Blindado'),
-	('ES', 'Prime', '5', 2, 3, null, 'Elétrica', 1, 'Banco de Couro'),
-	-- P Pick-up
-	('P0', 'Pick-up', '2', 0, 0, '700kg', null, 0, ''),
-	('PS', 'Pick-up Plus', '5', 0, 0, '700kg', null, 0, ''),
-	('PX', 'Pick-up de Luxo', '5', 0, 0, '700kg', 'Elétrica', 1, ''),
-	('P4', '4x4 Especial', '5', 0, 0, '700kg', 'Hidráulica', 0, 'Diesel,Tração 4x4'),
-	-- S Suv
-	('S0', 'Suv Compacto', '5', 2, 3, null, 'Hidráulica', 0, ''),
-	('S0t', 'Suv Compacto AT', '5', 2, 3, null, 'Hidráulica', 1, ''),
-	('SS', 'Suv Especial', '5', 2, 3, null, 'Hidráulica', 1, ''),
-	('SX', 'Suv Elite', '7', 2, 3, null, 'Elétrica', 1, 'Banco de Couro,Diesel');
-	-- Y Esportivo?
------------
-INSERT INTO MODELO(ModeloId, Modelo, Fabricante, Direcao, Cambio, Ano, PrecoModelo, CategoriaId) VALUES
-	(1, 'Uno 1.0 Drive', 'Fiat', '', 'Manual', 2021, 54830.00, 'A0'),
-	(2, 'Mobi 1.0 Easy', 'Fiat', '', 'Manual', 2022, 49301.00, 'A0'),
-	(3, 'Kwid 1.0 Zen', 'Renault', '', 'Manual', 2022, 56189.00, 'A0'),
-	(4, 'Gol 1.0', 'Volkswagen', '', 'Manual', 2022, 65090.00, 'A0');
-INSERT INTO MODELO(ModeloId, Modelo, Fabricante, Direcao, Cambio, Ano, PrecoModelo, CategoriaId) VALUES
-	(5, 'Sandero Zen', 'Renault', 'Hidráulica', 'Manual', 2022, 69671.00, 'AS'),
-	(6, 'Argo 1.0', 'Fiat', 'Hidráulica', 'Manual', 2022, 69765.00, 'AS'),
-	(7, 'Polo 1.0', 'Volkswagen', 'Hidráulica', 'Manual', 2021, 73735.00, 'AS'),
-	(8, '208 1.6 Like', 'Peugeot', 'Hidráulica', 'Manual', 2022, 73796.00, 'AS'),
-	(9, 'HB20 1.0 Evolution', 'Peugeot', 'Hidráulica', 'Manual', 2022, 74407.00, 'AS'),
-	(10, 'Onix 1.0 LT', 'Chevrolet', 'Hidráulica', 'Manual', 2022, 74812.00, 'AS');
-INSERT INTO MODELO(ModeloId, Modelo, Fabricante, Direcao, Cambio, Ano, PrecoModelo, CategoriaId) VALUES 
-	(11, 'Voyage 1.0', 'Volkswagen', 'Hidráulica', 'Manual', 2022, 70960.00, 'ASx'),
-	(12, 'Logan Zen', 'Renault', 'Hidráulica', 'Manual', 2022, 71469.00, 'ASx'),
-	(13, 'Prisma 1.4 LTZ', 'Chevrolet', 'Hidráulica', 'Manual', 2019, 71553.00, 'ASx'),
-	(14, 'Versa 1.6 Sense', 'Nissan', 'Hidráulica', 'Manual', 2021, 72990.00, 'ASx'),
-	(15, 'HB20S 1.6 Vision', 'Hyundai', 'Hidráulica', 'Manual', 2022, 78213.00, 'ASx');
-INSERT INTO MODELO(ModeloId, Modelo, Fabricante, Direcao, Cambio, Ano, PrecoModelo, CategoriaId) VALUES 
-	(16, 'Cobalt LT 1.4 8V (Flex)', 'Chevrolet', 'Hidráulica', 'Manual', 2021, 67269.00, 'AX'),
-	(17, 'Etios Sedan X Plus 1.5 (Flex)', 'Toyota', 'Hidráulica', 'Manual', 2021, 69439.00, 'AX'),
-	(18, 'Virtus 1.6 MSI (Flex)', 'Volkswagen', 'Hidráulica', 'Manual', 2020, 76071.00, 'AX');
-INSERT INTO MODELO(ModeloId, Modelo, Fabricante, Direcao, Cambio, Ano, PrecoModelo, CategoriaId) VALUES 
-	(19, 'Etios Sedan X Plus 1.5 (Flex) (Aut)', 'Toyota', 'Hidráulica', 'Automático', 2021, 79716.00, 'AXt'),
-	(20, 'Virtus 1.6 MSI (Flex) (Aut)', 'Volkswagen', 'Hidráulica', 'Automático', 2020, 81650.00, 'AXt'),
-	(21, 'HB20S 1.6 Vision (Aut)', 'Chevrolet', 'Hidráulica', 'Automático', 2022, 82097.00, 'AXt');
-INSERT INTO MODELO(ModeloId, Modelo, Fabricante, Direcao, Cambio, Ano, PrecoModelo, CategoriaId) VALUES
-	(22, 'Ecosport 1.5 SE', 'Ford', 'Hidráulica', 'Manual', 2021, 80069.00, 'S0'),
-	(23, 'Ecosport 2.0 Storm 4WD (Aut)', 'Ford', 'Hidráulica', 'Automático', 2021, 106485.00, 'S0t');
------------
-INSERT INTO LOCADORA(LocadoraId, Locadora, EnderecoId) VALUES
-	(1, 'Dopler Noroeste', 1),
-	(2, 'Dopler Asa Norte', 2);
------------
-INSERT INTO STATUS(StatusId, Status) VALUES
-	(0, 'Alugado'),
-	(1, 'Disponível'),
-	(2, 'Reservado'),
-	(3, 'Manutenção');
------------
-INSERT INTO GARAGEM(ModeloId, LocadoraId) VALUES
-	(3, 1),
-	(4, 1),
-	(8, 1),
-	(9, 1),
-	(10, 1),
-	(14, 1),
-	(15, 1),
-	(18, 1),
-	(20, 1),
-	(21, 1),
-	(22, 1),
-	(23, 1);
-INSERT INTO GARAGEM(ModeloId, LocadoraId) VALUES
-	(1, 2),
-	(2, 2),
-	(5, 2),
-	(6, 2),
-	(7, 2),
-	(11, 2),
-	(12, 2),
-	(13, 2),
-	(16, 2),
-	(17, 2),
-	(18, 2),
-	(19, 2);
-	(20, 2);
-	(21, 2);
-	(22, 2);
------------
-
---##### /DADOS PARA TESTE/ #####--
-
-
 --##### PROCEDIMENTOS #####--
 -- Cadastra CLIENTE
 DELIMITER //
@@ -190,11 +72,43 @@ CREATE TRIGGER Tr_InsereAluguel BEFORE UPDATE ON MODELO -- no Update
 		set new.PrecoAluguel = 0.0021 * new.PrecoModelo;
 DROP TRIGGER Tr_InsereAluguel;
 
--- Define Status de aluguel em GARAGEM quando há LOCAÇÃO de um modelo, e insere as datas de alguel na tabela (DataLocacao, DataRetorno)
+-- Define Status de aluguel em GARAGEM quando há LOCAÇÃO de um modelo, e insere as datas de aluguel na tabela (DataLocacao, DataRetorno)
 CREATE TRIGGER Tr_Locacao AFTER INSERT ON LOCACAO
 	FOR EACH ROW
-		update garagem set StatusId = 0, DataInicio = new.DataLocacao, DataFim = new.DataRetorno where GaragemId = new.GaragemId;
-DROP TRIGGER Tr_GaragemLocacao;
+		update garagem set StatusId = 2, DataInicio = new.DataLocacao, DataFim = new.DataRetorno where GaragemId = new.GaragemId;
+DROP TRIGGER Tr_Locacao;
+
+/*
+CREATE TRIGGER Tr_Locacao BEFORE INSERT ON LOCACAO
+	FOR EACH ROW
+		call VerificaLocacao(new.GaragemId, new.DataLocacao, new.DataRetorno);
+DROP TRIGGER Tr_Locacao;
+-- Verifica se o carro está disponível para aluguel, e se estiver faz a reserva
+DELIMITER //
+CREATE PROCEDURE VerificaLocacao(xGaragemId smallint, xDataLocacao date, xDataRetorno date)
+	BEGIN
+		-- consulta o Status do veículo que se pretende alugar [1. Disponível, 0. Alugado, 2. Reservado]
+		declare xStatusId tinyint;
+		select StatusId into xStatusId from garagem where GaragemId = xGaragemId;
+
+		case xStatusId
+			when 0 then select 'Alugado';
+			when 1 then
+				update garagem set StatusId = 2, DataInicio = xDataLocacao, DataFim = xDataRetorno where GaragemId = xGaragemId;
+				select 'Reserva Realizada!' as 'Notificação';
+			when 2 then select 'Reservado' as 'Notificação';
+			when 3 then select 'Em Manutenção' as 'Notificação';
+			else select 'não está na garagem' as 'Notificação';
+		end case;
+	END//
+DELIMITER ;
+DROP PROCEDURE VerificaLocacao;
+
+
+INSERT INTO LOCACAO(ClienteId, GaragemId, DataLocacao, DataRetorno) VALUES('755.244.601-37', 1, '2022-03-15', '2022-03-20');
+
+CALL VerificaLocacao(2, '2022-03-15', '2022-03-20');
+*/
 
 -- Calcula o valor total a pagar Valor = PrecoAluguel * (DataRetorno - DataLocacao)
 CREATE TRIGGER Tr_Pagamento AFTER INSERT ON LOCACAO
@@ -285,3 +199,64 @@ INSERT INTO LOCACAO(ClienteId, GaragemId, DataLocacao, DataRetorno) VALUES('085.
 INSERT INTO LOCACAO(ClienteId, GaragemId, DataLocacao, DataRetorno) VALUES('639.630.271-34', 1, '2022-04-16', '2022-04-22');
 -----------
 --##### /TESTES/ #####--
+
+
+--##### VIEWS #####--
+SELECT * FROM ENDERECO;
+SELECT * FROM CLIENTE;
+SELECT * FROM CATEGORIA;
+SELECT * FROM MODELO;
+SELECT * FROM LOCADORA;
+SELECT * FROM GARAGEM;
+SELECT * FROM LOCACAO;
+SELECT * FROM STATUS;
+SELECT * FROM PAGAMENTO;
+
+-- Dados do cliente + endereço
+select ClienteId, Nome, ceil(datediff(current_date, DataNasc)/365) as 'Idade', Telefone, Uf, Cidade, Bairro, DataCadastro, Ativo 
+from cliente c
+inner join endereco using (EnderecoId);
+
+-- select ClienteId, Nome, ceil(datediff(current_date, DataNasc)/365) as 'Idade', Telefone, Uf, Cidade, Bairro, DataCadastro, Ativo from cliente c
+-- inner join endereco e
+-- where c.EnderecoId = e.EnderecoId;
+
+-- Categoria dos modelos
+select CategoriaId, Categoria, Fabricante, Modelo, Lugares, Direcao, Cambio, Ano, PrecoAluguel, PrecoModelo 
+from modelo
+inner join categoria using (CategoriaId)
+order by CategoriaId;
+
+-- select c.CategoriaId, c.Categoria, Fabricante, Modelo, Lugares, Direcao, Cambio, Ano, PrecoAluguel, PrecoModelo 
+-- from modelo m
+-- inner join categoria c
+-- on m.CategoriaId = c.CategoriaId
+-- order by CategoriaId;
+
+-- quais modelos em que locadoras
+select Locadora, Modelo
+from garagem
+inner join locadora using (LocadoraId)
+inner join modelo using (ModeloId)
+order by Modelo;
+
+-- Média dos preços por categoria
+select CategoriaId, Categoria, concat('R$', format(sum(PrecoAluguel)/count(*), 0)) 'Aluguel Médio' from modelo
+inner join categoria using (CategoriaId)
+group by CategoriaId
+order by CategoriaId;
+-- select c.CategoriaId, Categoria, concat('R$', format(sum(PrecoAluguel)/count(*), 0)) 'Aluguel Médio' from modelo m
+-- inner join categoria c
+-- on m.CategoriaId = c.CategoriaId
+-- group by CategoriaId
+-- order by CategoriaId;
+
+-- Quem alugou o quê
+select Nome, modelo, Locadora, DataLocacao, DataRetorno
+from locacao
+inner join cliente using(ClienteId)
+inner join garagem using (GaragemId)
+inner join locadora using(LocadoraId)
+inner join modelo using (ModeloId);
+
+--##### /VIEWS/ #####--
