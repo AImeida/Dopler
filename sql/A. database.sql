@@ -45,8 +45,8 @@ CREATE TABLE MODELO (
 	PrecoAluguel float,
 	PrecoModelo float,
 	CategoriaId varchar(3),
-	UltimoUpdate timestamp,
 	Foto blob,
+	UltimoUpdate timestamp,
 	FOREIGN KEY (CategoriaId) REFERENCES CATEGORIA(CategoriaId)
 );
 CREATE TABLE LOCADORA (
@@ -90,4 +90,4 @@ CREATE TABLE PAGAMENTO (
 	FOREIGN KEY (LocacaoId) REFERENCES LOCACAO(LocacaoId)
 );
 
-drop schema dopler;
+-- drop schema dopler;
